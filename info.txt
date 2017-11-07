@@ -1,0 +1,10 @@
+xd projekt na mobile i prototyp
+scss to css compass lub gulp
+mobile first
+grid layout
+vendor prefixes do edytora
+git ignore na koniec
+deploy na github
+
+
+
