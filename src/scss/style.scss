@@ -20,3 +20,29 @@ body {
 		// font-size: 24px;
 	}
 }
+
+
+.navigation	{
+	height: 50px;
+	background-color: green;
+}
+
+.navigation-logo	{
+	width: 250px;
+	background-color: black;
+	float: left;
+
+}
+nav {
+	float: right;
+	overflow: hidden;
+}
+nav ul {
+	background-color: black;
+	list-style: none;
+	display: inline-block;
+	width: 350px;
+	li {
+		text-decoration: none;
+	}
+}

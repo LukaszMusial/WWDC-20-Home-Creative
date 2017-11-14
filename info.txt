@@ -1,7 +1,17 @@
 xd projekt na mobile i prototyp
+
+*, *after, *before border-box
+--
+Fluid margins i baddings vh i vw 
+--
+Myk z remami przy fontach 
+--
+Grid i flex
+--
+Mobile first
 mobile first
 grid layout
-git ignore na koniec
+remy
 deploy na github
 
 
