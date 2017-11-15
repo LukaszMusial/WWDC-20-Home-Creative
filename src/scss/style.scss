@@ -5,9 +5,76 @@ html {
 }
 
 //====================================
+body, html {
+	overflow: hidden;
+
+//================ working nav ================
+
+	position: absolute;
+	width: 100%;
+	left: 0px;
+}
 
 
-body {
+
+.site-container	{
+	position: relative;
+	height: 100%;
+	width: 100%;
+	background-color: cyan;
+}
+
+.sidebar {
+	position: absolute;
+	right: -250px;
+	height: 100%;
+	width: 250px;
+	background-color: olive;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	// overflow: hidden;
+}
+.list-menu {
+	width: 100%;
+	list-style: none;
+	background-color: blue;
+	margin: 0;
+	padding: 0;
+	// width: 350px;
+	li {
+		margin-bottom: 20px;
+		text-align: center;
+		&:last-child {
+			margin-bottom: 0;
+		}
+		a {
+			text-align: center;
+			text-decoration: none;
+			// display: block;
+			color: white;
+			&:focus {
+				outline: none;
+			}
+		}
+	}
+
+}
+
+.main-content {
+	position: relative;
+	height: 100%;
+	width: 100%;
+}
+.navigation {
+	background-color: red;
+	label {
+		float: right;
+	}
+}
+
+.article {
+	clear: both;
 	h1	{
 		color: $color-text;
 		display: flex;
@@ -18,31 +85,5 @@ body {
 		color: $color-text;
 		display: flex;
 		// font-size: 24px;
-	}
-}
-
-
-.navigation	{
-	height: 50px;
-	background-color: green;
-}
-
-.navigation-logo	{
-	width: 250px;
-	background-color: black;
-	float: left;
-
-}
-nav {
-	float: right;
-	overflow: hidden;
-}
-nav ul {
-	background-color: black;
-	list-style: none;
-	display: inline-block;
-	width: 350px;
-	li {
-		text-decoration: none;
 	}
 }
