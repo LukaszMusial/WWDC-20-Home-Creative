@@ -26,5 +26,8 @@
     "gulp-sourcemaps": "^2.6.1",
     "gulp-uglify": "^3.0.0",
     "run-sequence": "^2.2.0"
+  },
+  "dependencies": {
+    "browser-sync": "^2.23.3"
   }
 }
