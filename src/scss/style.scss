@@ -24,8 +24,16 @@ body, html {
 	background-color: cyan;
 }
 
-.about img	{
-	display: block;
-	height: 65px;
-	width: 65px;
+.welcome	{
+	height: 100vh;
+	background: url(/img/welcome-bg_01.jpg) 20% center no-repeat;
+	background-size: cover;
+}
+
+.logo-wraper	{
+	.logo	{
+		display: block;
+		background: url(/img/logo.svg) no-repeat;
+		text-indent: -999px;
+	}
 }
