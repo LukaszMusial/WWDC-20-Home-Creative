@@ -18,22 +18,50 @@ body, html {
 
 
 .site-container	{
+	margin: 0 auto; 
 	position: relative;
-	height: 100%;
-	width: 100%;
-	background-color: cyan;
+	// height: 100%;
+	// width: 100%;
+	// background-color: cyan;
 }
 
 .welcome	{
+	position: relative;
 	height: 100vh;
 	background: url(/img/welcome-bg_01.jpg) 20% center no-repeat;
 	background-size: cover;
+	padding-top: 70px;
+	padding-left: 50px;
+	padding-right: 50px;
 }
 
-.logo-wraper	{
-	.logo	{
-		display: block;
-		background: url(/img/logo.svg) no-repeat;
-		text-indent: -999px;
+
+.navigation	{
+	position: absloute;
+	top: 55px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	&__logo-wrapper	{
+		width: 70px;
+		.logo	{
+			display: block;
+			background: url(/img/logo.svg) no-repeat;
+			text-indent: -999px;
+		}
 	}
+	&__menu-icon-wrapper {
+		// display: inline;
+	}
+}
+
+.welcome-wrapper	{
+	background-color: red;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.welcome-header-wrapper	{
+	background-color: blue;
 }
