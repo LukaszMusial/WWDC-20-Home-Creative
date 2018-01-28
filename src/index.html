@@ -8,11 +8,9 @@
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         
         <!-- build:css -->
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/base.css">
-        <link rel="stylesheet" href="https://d1azc1qln24ryf.cloudfront.net/114779/Socicon/style-cf.css?u8vidh">
+        <link rel="stylesheet" href="https://d1azc1qln24ryf.cloudfront.net/114779/Socicon/style-cf.css?u8vidh"> <!-- into scss? which is better? -->
 
-		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/all.css">
         <!-- endbuild -->
     </head>
     <body>
@@ -58,25 +56,29 @@
                         <h1 class="section-header">ABOUT</h1>
                     </div>
                     <article class="article">
-                        <img src="img/about-img_03.jpg" class="article__img">
-                        <h2 class="article__header">LESS IS MORE - INNOX</h2>                        
-                        <p class="article__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
-                        <div class="article__icons">
-                            <div class="wrapper-icon">
-                                <img src="img/timing-icon.svg" alt="clock icon" class="article__icons__icon">
-                                <h3 class="article__icons__header">TIMING</h3>
-                            </div>
-                             <div class="wrapper-icon">
-                                <img src="img/presentation-icon.svg" alt="presebtation icon" class="article__icons__icon">
-                                <h3 class="article__icons__header">PRESENTATION</h3>
-                            </div>
-                             <div class="wrapper-icon">
-                                <img src="img/accurate-icon.svg" alt="dartboard icon" class="article__icons__icon">
-                                <h3 class="article__icons__header">ACCURATE</h3>
-                            </div>
+                        <div class="article__img-wrapper">    
+                            <img src="img/about-img_03.jpg" class="article__img">
                         </div>
-                        <button class="btn btn--primary">About detail</button>
-                        <button class="btn btn--primary">More services</button>
+                        <div class="article__content">
+                            <h2 class="article__header">LESS IS MORE - INNOX</h2>                        
+                            <p class="article__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+                            <div class="article__icons">
+                                <div class="wrapper-icon">
+                                    <img src="img/icons/timing-icon.svg" alt="clock icon" class="article__icons__icon">
+                                    <h3 class="article__icons__header">TIMING</h3>
+                                </div>
+                                 <div class="wrapper-icon">
+                                    <img src="img/icons/presentation-icon.svg" alt="presebtation icon" class="article__icons__icon">
+                                    <h3 class="article__icons__header">PRESENTATION</h3>
+                                </div>
+                                 <div class="wrapper-icon">
+                                    <img src="img/icons/accurate-icon.svg" alt="dartboard icon" class="article__icons__icon">
+                                    <h3 class="article__icons__header">ACCURATE</h3>
+                                </div>
+                            </div>
+                            <button class="btn btn--primary">About detail</button>
+                            <button class="btn btn--primary">More services</button>
+                        </div>
                     </article>
                 </section>
 
@@ -171,7 +173,7 @@
                     </article>
                 </section>
 
-                <section clas="our_team">
+                <section clas="our-team">
                     <div class="section-header-wrapper">
                         <h1 class="section-header">OUR TEAM</h1>
                     </div>

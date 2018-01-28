@@ -1,0 +1,18 @@
+
+
+.btn {
+	min-width: 160px;
+	background-color: $color-primary;
+	color: $color-secondary;
+	border: 0;
+	padding: 16px 24px;
+	font-family: $font-primary;
+	font-size: .7em;
+	font-weight: $font-bold;
+	text-transform: uppercase;
+	cursor: pointer;
+	&--third {
+		background-color: $color-secondary;
+		color: $color-primary;
+	}
+}

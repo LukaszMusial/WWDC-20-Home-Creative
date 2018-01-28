@@ -1,25 +1,14 @@
+
+//========================================== fluid font =====================================================
+
 $min_width: 320px;
 $max_width: 1200px;
 $min_font: 16px;
 $max_font: 24px;
-// $baseFontSize : 10;
 
-//========================================== general variables =====================================================
-
-@import url('https://fonts.googleapis.com/css?family=PT+Serif');
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700');
-
-$font-primary: 'Montserrat', sans-serif;
-$font-secondary: 'PT Serif', serif;
-$font-light: 300;
-$font-regular: 400;
-$font-bold: 700;
-$color-text: #b2b1af;
-$color-primary: #97735d;
-$color-secondary: white;
+$baseFontSize: 16;
 
 
-//========================================== fluid font =====================================================
 
 @function strip-unit($value) {
   @return $value / ($value * 0 + 1);
