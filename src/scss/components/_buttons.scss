@@ -1,13 +1,14 @@
 
 
 .btn {
-	min-width: 160px;
+	min-width: rem(160);
 	background-color: $color-primary;
 	color: $color-secondary;
 	border: 0;
-	padding: 16px 24px;
+	margin: rem(10);
+	padding: rem(16) rem(24);
 	font-family: $font-primary;
-	font-size: .7em;
+	font-size: rem(12);
 	font-weight: $font-bold;
 	text-transform: uppercase;
 	cursor: pointer;
