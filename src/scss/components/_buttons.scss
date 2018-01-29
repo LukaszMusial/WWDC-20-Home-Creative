@@ -12,6 +12,9 @@
 	font-weight: $font-bold;
 	text-transform: uppercase;
 	cursor: pointer;
+	&--secondary {
+		// max-width: rem(160);
+	}
 	&--third {
 		background-color: $color-secondary;
 		color: $color-primary;

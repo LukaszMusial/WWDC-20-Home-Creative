@@ -1,0 +1,20 @@
+.article {
+	// background: red;
+	min-width: 300px;
+	display: flex;
+	flex-direction: column;
+	font-family: $font-primary;
+	text-align: center;
+}
+.article__header {
+	color: $color-primary;
+	font-size: rem(22);
+	margin: rem(30) 0;
+}
+
+
+.article__text {
+	font-family: $font-secondary;
+	text-align: justify;
+	color: $color-text;
+}
