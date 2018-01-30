@@ -5,7 +5,13 @@
 html {
   @include fluid-type($min_width, $max_width, $min_font, $max_font);
   box-sizing: border-box;
+  .article__text {
+    $min_font: 16px;
+    $max_font: 19px;
+    @include fluid-type($min_width, $max_width, $min_font, $max_font);
+  }
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -20,8 +26,12 @@ body, html {
 
 section {
   margin: 0 auto;
-  max-width: 1100px;
+  max-width: 1200px;
   padding: 0 35px;
+  // background-color: red;
+  @media (min-width: 1200px) {
+    padding: 0;
+  }
 }
 
 .site-container {
