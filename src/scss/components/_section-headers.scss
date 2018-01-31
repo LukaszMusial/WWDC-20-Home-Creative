@@ -11,4 +11,11 @@
 	font-size: rem(35);
 	font-family: $font-primary;
 	font-weight: $font-strong;
+	@media(min-width: 720px) {
+		width: 300px;
+		margin: 0 auto;
+		padding: 0;
+
+
+	}
 }
