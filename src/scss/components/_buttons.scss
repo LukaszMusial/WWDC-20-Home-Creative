@@ -14,6 +14,37 @@
 	cursor: pointer;
 	&--secondary {
 		// max-width: rem(160);
+		background:transparent;
+		border: 1px solid white;
+		padding: rem(7) rem(15);
+		min-width: rem(108);
+		font-size: rem(10);
+		font-weight: $font-strong;
+		position: relative;
+		@media(min-width: 992px) {
+			&:after {
+				content: '';
+				width: 15%;
+				border-bottom: 1px solid white;
+				position: absolute;
+				left: 107%;
+				top: 50%;
+				// @media(min-width: 992px) {
+				// 	width: 5vw;
+				// }
+			}
+			&:before {
+				content: '';
+				width: 15%;
+				border-bottom: 1px solid white;
+				position: absolute;
+				left: -23%;
+				top: 50%;
+				// @media(min-width: 992px) {
+				// 	width: 5vw;
+				// }
+			}
+		}
 	}
 	&--third {
 		background-color: $color-secondary;
