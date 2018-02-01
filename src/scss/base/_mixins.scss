@@ -1,6 +1,12 @@
 
 //========================================== fluid font =====================================================
 
+$min_width: 320px;
+$max_width: 1200px;
+$min_font: 16px;
+// $max_font: 22px;
+$max_font: 19px;
+
 
 
 @function strip-unit($value) {
@@ -27,6 +33,8 @@
 }
 
 //========================================== rem like pixels =====================================================
+
+$baseFontSize: 16;
 
 @function rem($pixels, $context: $baseFontSize) {
   @if (unitless($pixels)) {

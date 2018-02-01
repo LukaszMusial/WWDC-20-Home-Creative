@@ -1,8 +1,12 @@
 .section-header-wrapper {
+	// background: blue;
+	text-align: center;
+	overflow: hidden;
 
 
 }
 .section-header {
+	// background: red;
 	color: $color-primary;
 	border: 1px solid $color-primary;
 	text-align: center;
@@ -12,10 +16,26 @@
 	font-family: $font-primary;
 	font-weight: $font-strong;
 	@media(min-width: 720px) {
-		width: 300px;
-		margin: 0 auto;
-		padding: 0;
-
-
+		display: inline-block;
+		margin: rem(80) 0 rem(120) 0;
+		padding: rem(7) rem(15);
+		position: relative;
+		font-size: rem(20);
+		&:before {
+			content: '';
+			width: rem(600);
+			border-bottom: 1px solid $color-primary;
+			position: absolute;
+			right: 100%;
+			top: 50%;
+		}
+		&:after {
+			content: '';
+			width: rem(600);
+			border-bottom: 1px solid $color-primary;
+			position: absolute;
+			left: 100%;
+			top: 50%;
+		}
 	}
 }

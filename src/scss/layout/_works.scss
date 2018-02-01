@@ -1,3 +1,16 @@
+.img-photo-11 {
+	background: url(/img/photo_11.jpg);
+}
+.img-photo-12 {
+	background: url(/img/photo_12.jpg);
+}
+.img-photo-13 {
+	background: url(/img/photo_13.jpg);
+}
+.img-photo-14 {
+	background: url(/img/photo_14.jpg);
+}
+
 .gallery {
 	display: flex;
 	flex-wrap: wrap;
@@ -6,7 +19,7 @@
 }
 
 .gallery__thumbnail {
-	background: url(/img/photo_11.jpg);
+	
 	background-size: cover;
 	margin: rem(15);
 	width: rem(250);
@@ -16,9 +29,12 @@
 	flex-direction: column;
 	// position: relative;
 	.gallery__thumbnail__description {
-		margin: 15px;
-		box-shadow: 0px 0px 0px 15px rgba(224, 190, 163, .6);
+		margin: 10px;
+		padding-right: rem(20);
+		box-shadow: 0px 0px 0px 10px rgba(224, 190, 163, .6);
 		background: rgba(151, 115, 93, .9);
+		// display: flex;
+		// flex-direction: column;
 		// border: 15px solid rgba(248, 213, 190, .2);
 		// position: absolute;
 		// bottom: 0;
@@ -27,13 +43,16 @@
 			color: $color-secondary;
 			font-family: $font-primary;
 			font-size: rem(13);
+			// background: blue;
+			margin: rem(10) 0 0 0;
 		}
 		.gallery__thumbnail__text {
 			font-family: $font-secondary;
 			font-size: rem(12);
 			color: $color-secondary;
 			opacity: 0.1;
-	
+			// background: red;
+			margin: rem(5) 0 rem(5) 0;
 		}
 	}
 }
