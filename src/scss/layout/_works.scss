@@ -16,10 +16,10 @@
 	flex-wrap: wrap;
 	// flex-direction: column;
 	justify-content: center;
+	margin-bottom: rem(40);
 }
 
 .gallery__thumbnail {
-	
 	background-size: cover;
 	margin: rem(15);
 	width: rem(250);
@@ -27,7 +27,9 @@
 	display: flex;
 	justify-content: flex-end;
 	flex-direction: column;
-	// position: relative;
+	@media (min-width: 992px) {
+		position: relative;
+	}
 	.gallery__thumbnail__description {
 		margin: 10px;
 		padding-right: rem(20);
@@ -39,20 +41,74 @@
 		// position: absolute;
 		// bottom: 0;
 		// left: 0;
+	}
+	.gallery__thumbnail__header {
+		color: $color-secondary;
+		font-family: $font-primary;
+		font-size: rem(13);
+		// background: blue;
+		margin: rem(10) 0 0 rem(5) ;
+	}
+	.gallery__thumbnail__text {
+		font-family: $font-secondary;
+		font-size: rem(12);
+		color: $color-secondary;
+		opacity: 0.1;
+		// background: red;
+		margin: rem(5) 0 rem(5) rem(5);
+	}
+}
+
+@media (min-width: 992px) {
+	.gallery__thumbnail__description {
+		display: none;
 		.gallery__thumbnail__header {
-			color: $color-secondary;
-			font-family: $font-primary;
-			font-size: rem(13);
-			// background: blue;
-			margin: rem(10) 0 0 0;
+			display: none;
 		}
 		.gallery__thumbnail__text {
-			font-family: $font-secondary;
-			font-size: rem(12);
-			color: $color-secondary;
-			opacity: 0.1;
-			// background: red;
-			margin: rem(5) 0 rem(5) 0;
+			display: none;
 		}
+		.btn {
+			display: none;
+		}
+	}
+
+	.gallery__thumbnail:hover .gallery__thumbnail__description {
+		position: absolute;
+		width: 90%;
+		height: 92.5%;
+		top: 5px;
+		left: 4px;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		// margin: 20px;
+		padding-right: rem(20);
+		box-shadow: 0 0px 0 15px rgba(224, 190, 163, .6);
+		background: rgba(151, 115, 93, .9);
+	}
+	.gallery__thumbnail:hover .gallery__thumbnail__header {
+		display: block;
+		color: $color-secondary;
+		font-family: $font-primary;
+		font-size: rem(13);
+		// background: blue;
+		margin: rem(10) 0 0 rem(30) ;
+	}
+	.gallery__thumbnail:hover .gallery__thumbnail__text {
+		display: inline-block;
+		font-family: $font-secondary;
+		font-size: rem(12);
+		color: $color-secondary;
+		opacity: 0.1;
+		// background: red;
+		margin: rem(5) 0 rem(5) rem(30);
+	}
+	.gallery__thumbnail:hover .btn--gallery {
+		display: block;
+		max-width: rem(100);
+		align-self: center;
+		margin-top: rem(80);
+		margin-bottom: rem(30);
 	}
 }
