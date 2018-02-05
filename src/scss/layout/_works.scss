@@ -18,15 +18,26 @@
 	justify-content: center;
 	margin-bottom: rem(40);
 }
+.gallery-load {
+	flex-wrap: nowrap;
+}
+@media (max-width: 1060px) {
+	.gallery-load {
+		flex-wrap: wrap;
+	}
+}
 
 .gallery__thumbnail {
 	background-size: cover;
 	margin: rem(15);
 	width: rem(250);
 	height: rem(350);
+	// min-width: rem(220);
+	// min-height: rem(320);
 	display: flex;
 	justify-content: flex-end;
 	flex-direction: column;
+	background: green;
 	@media (min-width: 992px) {
 		position: relative;
 	}
