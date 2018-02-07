@@ -20,9 +20,22 @@ const images = [
 var count = 0;
 var button = document.querySelector("#button_load");
 var gallery = document.querySelector(".gallery");
+
+var div = document.createElement("div");
+div.classList.add("gallery-row");
+div.classList.add("gallery-load");
+div.id = 'gallery-row2';
+gallery.appendChild(div);
+var gallery2 = document.querySelector("#gallery-row2");
+
+// var div = document.createElement("div");
+// div.classList.add("gallery");
+// gallery.appendChild(div);
+
 // var parser = new DOMParser(); 
 
 function imgTemplate (img) {
+ 
   count++;
   return  `<figure class="gallery__thumbnail">
       <img src="${img.src}" alt="business cards" id="${img.id}" class="gallery__thumbnail__img">
@@ -45,10 +58,10 @@ function imgTemplate (img) {
 
 button.addEventListener("click", function() {
   if(count < images.length) {
-    // gallery.innerHTML += `${images.map(imgTemplate).join("")}`;
+    gallery2.innerHTML = `${images.map(imgTemplate).join("")}`;
     // gallery.append(`${images.map(imgTemplate).join("")}`);
     // gallery.append(imgTemplate);
-    gallery.insertAdjacentHTML('afterend', imgTemplate);
+    // gallery.insertAdjacentHTML('afterend', imgTemplate);
 
     button.classList.add("hide");
   }
@@ -66,7 +79,7 @@ button.addEventListener("click", function() {
 
 
 
-  // var figure = document.createElement("figure");
+    // var figure = document.createElement("figure");
     // figure.classList.add("gallery__thumbnail");
     // // var ParentDiv = document.querySelector(".gallery");
     // // ParentDiv.appendChild(figure);

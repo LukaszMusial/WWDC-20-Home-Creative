@@ -1,19 +1,19 @@
 
 
-.gallery {
+.gallery-row {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	margin-bottom: rem(40);
 }
-// .gallery-load {
-// 	flex-wrap: nowrap;
-// }
-// @media (max-width: 1060px) {
-// 	.gallery-load {
-// 		flex-wrap: wrap;
-// 	}
-// }
+.gallery-load {
+	flex-wrap: nowrap;
+}
+@media (max-width: 950px) {
+	.gallery-load {
+		flex-wrap: wrap;
+	}
+}
 
 .gallery__thumbnail {
 	margin: rem(15);
@@ -60,7 +60,7 @@
 	}
 }
 
-@media (min-width: 992px) {
+@media (min-width: 951px) {
 	.wrapper-thumbnail__description {
 		display: none;
 		.gallery__thumbnail__description {
