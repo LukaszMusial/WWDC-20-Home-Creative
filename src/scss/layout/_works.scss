@@ -1,4 +1,34 @@
-
+.gallery__categories {
+	display: flex;
+	justify-content: center;
+}
+.gallery__categories__list {
+	// background: cyan;
+	list-style: none;
+	display: flex;
+	justify-content: space-between;
+	min-width: rem(580);
+	padding:0;
+}
+.gallery__categories__list {
+		
+	.gallery__category__link {
+		color: $color-text;
+		font-family: $font-primary;
+		font-size: rem(12);
+		text-decoration: none;
+		&:hover {
+			color: rgba(0,0,0, .9)
+		}
+	}
+}
+@media(max-width: 720px) {
+	.gallery__categories,
+	.gallery__categories__list,
+	.gallery__categories__list {
+		display: none;
+	}
+}
 
 .gallery-row {
 	display: flex;
