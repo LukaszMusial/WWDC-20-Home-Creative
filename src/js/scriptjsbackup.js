@@ -36,7 +36,7 @@ function imgTemplate (img) {
  
   // count++; 
   return  `<figure class="gallery__thumbnail">
-      <img src="${img.data.src}" alt="business cards" id="${img.data.id}" class="gallery__thumbnail__img">
+      <img src="${img.src}" alt="business cards" id="${img.id}" class="gallery__thumbnail__img">
       <div class="wrapper-thumbnail__description">
           <figcaption class="gallery__thumbnail__description">
               <h2 class="gallery__thumbnail__header">REALISTIC BOOK</h2>
@@ -86,13 +86,12 @@ button.addEventListener("click", function() {
   
   var ourRequest = new XMLHttpRequest();
   // ourRequest.open('GET','https://api.myjson.com/bins/j1zqp');
-  ourRequest.open('GET','http://localhost:3000/imagesData4.json');
+  ourRequest.open('GET','http://localhost:3000/imagesData'+ countJson +'.json');
 
   ourRequest.onload = function() {
     if(ourRequest.status >= 200 && ourRequest.status < 400) {
      var images = JSON.parse(ourRequest.responseText);
      renderHtml(images);
-     console.log(images.length);
     } else {
       console.log("connection error");
     }

@@ -27,3 +27,8 @@ media querys
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: @screen-lg-min) { ... }
+
+
+JSON:
+
+https://api.myjson.com/bins/z6lqx
