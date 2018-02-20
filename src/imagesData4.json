@@ -32,5 +32,22 @@
           "img/photo_13.jpg",
           "img/photo_14.jpg"
         ]
+  },
+  {
+    "nr": "3",
+    "id":
+        [
+          "photo_16",
+          "photo_17",
+          "photo_18",
+          "photo_19"
+        ], 
+    "src":
+        [
+          "img/photo_15.jpg",
+          "img/photo_16.jpg",
+          "img/photo_17.jpg",
+          "img/photo_18.jpg"
+        ]
   }
 ]
