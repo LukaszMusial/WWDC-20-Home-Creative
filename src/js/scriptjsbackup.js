@@ -92,6 +92,10 @@ button.addEventListener("click", function() {
     if(ourRequest.status >= 200 && ourRequest.status < 400) {
      var images = JSON.parse(ourRequest.responseText);
      renderHtml(images);
+    } else if (ourRequest.status >= 400 && ourRequest.status <= 499) {
+      button.classList.add("hide");
+      console.log("no more JSON files");
+      gallery2.innerHTML = "No more pictures in gallery";
     } else {
       console.log("connection error");
     }
@@ -100,7 +104,7 @@ button.addEventListener("click", function() {
   ourRequest.send();
   countJson++;
   countId++;
-  if (countJson>2) button.classList.add("hide");
+  // if (countJson>2) button.classList.add("hide");
 
 
 

@@ -33,18 +33,26 @@ var gallery = document.querySelector(".gallery");
 
 
 function imgTemplate (img) {
- 
+
+  var output = '';
+
+  for(var i in img) {
+    for(var ii in img[i].src) {
+      output += `<figure class="gallery__thumbnail">
+        <img src="${img[i].src[ii]}" alt="business cards" id="2" class="gallery__thumbnail__img">
+        <div class="wrapper-thumbnail__description">
+            <figcaption class="gallery__thumbnail__description">
+                <h2 class="gallery__thumbnail__header">REALISTIC BOOK</h2>
+                <p class="gallery__thumbnail__text">Print</p>
+                <button class="btn btn--secondary btn--modifer-lines btn--gallery right">Wiew work</button>
+            </figcaption>
+        </div>
+      </figure>`
+    }
+  }
+  
   // count++; 
-  return  `<figure class="gallery__thumbnail">
-      <img src="${img.data.src}" alt="business cards" id="${img.data.id}" class="gallery__thumbnail__img">
-      <div class="wrapper-thumbnail__description">
-          <figcaption class="gallery__thumbnail__description">
-              <h2 class="gallery__thumbnail__header">REALISTIC BOOK</h2>
-              <p class="gallery__thumbnail__text">Print</p>
-              <button class="btn btn--secondary btn--modifer-lines btn--gallery right">Wiew work</button>
-          </figcaption>
-      </div>
-    </figure>`
+  return output;
 
 
 
@@ -90,9 +98,13 @@ button.addEventListener("click", function() {
 
   ourRequest.onload = function() {
     if(ourRequest.status >= 200 && ourRequest.status < 400) {
-     var images = JSON.parse(ourRequest.responseText);
+     images = JSON.parse(ourRequest.responseText);
      renderHtml(images);
      console.log(images.length);
+    // } else if (ourRequest.status >= 400 && ourRequest.status <= 499) {
+    //   button.classList.add("hide");
+    //   console.log("no more JSON files");
+    //   gallery2.innerHTML = "No more pictures in gallery";
     } else {
       console.log("connection error");
     }
@@ -101,7 +113,7 @@ button.addEventListener("click", function() {
   ourRequest.send();
   countJson++;
   countId++;
-  if (countJson>2) button.classList.add("hide");
+  // if (countJson >== images.length) button.classList.add("hide");
 
 
 
