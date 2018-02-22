@@ -1,19 +1,17 @@
 .welcome {
-	// position: relative;
+	position: relative;
 	max-width: none;
 	height: 100vh;
-	background: url(/img/welcome-bg_01.jpg) 20% center no-repeat;
-	background-size: cover;
-	// padding-top: 70px;
-	padding-left: 50px;
-	padding-right: 50px;
+	background: pink;
+
 }
+
 
 // NAV TO NAVIGATION LATER
 
 .navigation	{
-	// position: absloute;
-	padding-top: 55px;
+	position: fixed;
+	// padding-top: 55px;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -29,7 +27,17 @@
 		// display: inline;
 	}
 }
+.slider {
+	display: flex;
+	overflow: hidden;
+}
+.slide {
+	background: url(/img/welcome-bg_01.jpg) 20% center no-repeat;
+	background-size: cover;
+	height: 100vh;
+	width: 100vw;
 
+}
 .welcome-wrapper {
 	margin: 0 auto;
 	height: 80%;
