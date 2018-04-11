@@ -2,7 +2,9 @@
 
 var slides = document.getElementsByClassName('slide');
 var ammountSls = document.getElementsByClassName('slide').length;
-var widthSl = document.getElementById('welcome').offsetWidth; //tu jest problem
+// var widthSl = document.getElementById('site-container').offsetWidth; //for not full window
+var widthSl = window.innerWidth; //tu jest problem
+
 var jump = widthSl;
 var index = 0;
 var currTrans = [];
@@ -10,19 +12,22 @@ var transistioning = true;
 
 
 document.addEventListener("DOMContentLoaded", function() {
-  console.log(jump);
+  // console.log(jump);
   for(i=0; i<ammountSls; i++) {
-
     currTrans[i] = -jump;
     // console.log(currTrans[i]);
   }
-  
+  window.addEventListener('resize', scale)
   document.getElementById('prev-arrow').addEventListener('click', prev);
   document.getElementById('next-arrow').addEventListener('click', next);
 })
 
 function switchTrans() {
   transistioning = true;
+}
+
+function scale() {
+  widthSl = window.innerWidth;
 }
 
 function prev() {
