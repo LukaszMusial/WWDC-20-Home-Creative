@@ -1,23 +1,82 @@
 // ===========================  SLIDER ===========================
 
+var slides = document.getElementsByClassName('slide');
+var ammountSls = document.getElementsByClassName('slide').length;
+var widthSl = document.getElementById('welcome').offsetWidth; //tu jest problem
+var jump = widthSl;
+var index = 0;
+var currTrans = [];
+var transistioning = true;
 
 
+document.addEventListener("DOMContentLoaded", function() {
+  console.log(jump);
+  for(i=0; i<ammountSls; i++) {
 
+    currTrans[i] = -jump;
+    // console.log(currTrans[i]);
+  }
+  
+  document.getElementById('prev-arrow').addEventListener('click', prev);
+  document.getElementById('next-arrow').addEventListener('click', next);
+})
 
+function switchTrans() {
+  transistioning = true;
+}
 
+function prev() {
+  
+  if(transistioning) {
+    transistioning = false;
+    index--;
 
+    if (index == -1) {
+      index = ammountSls - 1;
+    }
 
+    for(var i=0;i<ammountSls;i++) {
+      var slides = document.getElementsByClassName('slide')[i];
+      slides.style.transform = 'translateX('+ (currTrans[i] + jump) +'px)';
+      slides.style.opacity = 1;
+      currTrans[i] = currTrans[i] + jump;
+    }
 
+    var outerSlide = document.getElementsByClassName('slide')[index];
+    var transToFront = currTrans[index] - (widthSl * ammountSls);
+    outerSlide.style.transform = 'translateX('+ transToFront +'px)';
+    outerSlide.style.opacity = 0;
 
+    currTrans[index] = currTrans[index] - (widthSl * ammountSls);
+    
+    slides.addEventListener("transitionend", switchTrans);
+  }
+}
 
+function next() {
+  
+  if(transistioning) {
+    transistioning = false;
+    index = index % ammountSls;
+    index++;
 
+    for(var i=0;i<ammountSls;i++) {
+      var slides = document.getElementsByClassName('slide')[i];
+      slides.style.transform = 'translateX('+ (currTrans[i] - jump) +'px)';
+      slides.style.opacity = 1;
+      currTrans[i] = currTrans[i] - jump;
+    }
 
+    var outerSlide = document.getElementsByClassName('slide')[index-1];
+    var transToFront = currTrans[index-1] + (widthSl * ammountSls);
 
+    outerSlide.style.transform = 'translateX('+ transToFront +'px)';
+    outerSlide.style.opacity = 0;
 
-
-
-
-
+    currTrans[index-1] = currTrans[index-1] + (widthSl * ammountSls);
+    slides.addEventListener("transitionend", switchTrans);
+  }
+}
 
 // ===========================  AJAX LOADING GALLERY ===========================
 

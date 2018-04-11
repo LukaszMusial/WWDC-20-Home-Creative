@@ -2,8 +2,8 @@
 	position: relative;
 	max-width: none;
 	height: 100vh;
-	background: pink;
-
+	// background: pink;
+	overflow: hidden;
 }
 
 
@@ -27,20 +27,10 @@
 		// display: inline;
 	}
 }
-.slider {
-	display: flex;
-	overflow: hidden;
-}
-.slide {
-	background: url(/img/welcome-bg_01.jpg) 20% center no-repeat;
-	background-size: cover;
-	height: 100vh;
-	width: 100vw;
 
-}
 .welcome-wrapper {
-	margin: 0 auto;
-	height: 80%;
+	// margin: 0 auto;
+	// height: 80%;
 	// background-color: red;
 	display: flex;
 	justify-content: space-between;
@@ -48,18 +38,7 @@
 	max-width: rem(1100);
 }
 
-.welcome-wrapper:before	{
-	content: url(/img/leftsliderarrow.svg);
-	// background-color: green;
-	// height: 100%;
-	// width: 100%;
-}
-.welcome-wrapper:after	{
-	content: url(/img/rightsliderarrow.svg);
-	// background-color: black;
-	// height: 50px;
-	// width: 100%;
-}
+
 .welcome-header-wrapper	{
 	// background-color: blue;
 	text-align: center;
