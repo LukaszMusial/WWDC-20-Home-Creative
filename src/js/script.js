@@ -2,22 +2,35 @@
 
 var slides = document.getElementsByClassName('slide');
 var ammountSls = document.getElementsByClassName('slide').length;
+var sliderWidth = document.getElementById('slider').offsetWidth;
 // var widthSl = document.getElementById('site-container').offsetWidth; //for not full window
 var widthSl = window.innerWidth; //tu jest problem
 
-var jump = widthSl;
+
+//eks
+// var slider = document.getElementById('slider');
+// var sliderWidth = (widthSl * ammountSls);
+
+
+var jump = widthSl; //teraz jest problem ze skokiem reaguje na zmianę ale ma złą wartość
 var index = 0;
 var currTrans = [];
 var transistioning = true;
+var flag = true;
+
 
 
 document.addEventListener("DOMContentLoaded", function() {
-  // console.log(jump);
-  for(i=0; i<ammountSls; i++) {
-    currTrans[i] = -jump;
-    // console.log(currTrans[i]);
-  }
   window.addEventListener('resize', scale);
+  // eks
+  // slider.style.width = (widthSl * ammountSls) + 'px';
+  // slide.style.width = widthSl + 'px';
+
+
+  // for(i=0; i<ammountSls; i++) {
+  //   currTrans[i] = -jump;
+  //   // console.log(currTrans[i]);
+  // }
   document.getElementById('prev-arrow').addEventListener('click', prev);
   document.getElementById('next-arrow').addEventListener('click', next);
 
@@ -29,25 +42,51 @@ function switchTrans() {
 }
 
 function scale() {
-  var newSlide = document.getElementsByClassName('slide');
+
+  
+
+  // var newSlide = document.getElementsByClassName('slide');
   widthSl = window.innerWidth;
   jump = widthSl;
+  sliderWidth = widthSl * ammountSls;
+  slider.style.width = (widthSl * ammountSls) + 'px';
+
   // slides.style.width = window.innerWidth;
   for(i=0; i<ammountSls; i++) {
-    newSlide[i].style.width = widthSl;
-    // console.log(currTrans[i]);
+    // newSlide[i].style.width = widthSl;
+    // currTrans[i] = co??????????????????????????????????????????index
+
   }
+ 
+
+  console.log(jump +'jump');
+  // console.log(widthSl+"widthSl");
+  // console.log((currTrans[1]) +'ct');
+
+
 }
 
 function prev() {
   
   if(transistioning) {
     transistioning = false;
+    index = index % ammountSls;
+
     index--;
 
     if (index == -1) {
       index = ammountSls - 1;
     }
+    if(flag) {
+      for(i=0; i<ammountSls; i++) {
+        currTrans[i] = -jump;
+        // console.log(currTrans[i]);
+      }
+    }
+    flag = false;
+
+
+
 
     for(var i=0;i<ammountSls;i++) {
       var slides = document.getElementsByClassName('slide')[i];
@@ -64,6 +103,11 @@ function prev() {
     currTrans[index] = currTrans[index] - (widthSl * ammountSls);
     
     slides.addEventListener("transitionend", switchTrans);
+    console.log(index);
+    console.log((currTrans[1]) +'ct');
+
+
+
   }
 }
 
@@ -73,6 +117,14 @@ function next() {
     transistioning = false;
     index = index % ammountSls;
     index++;
+
+  if(flag) {
+    for(i=0; i<ammountSls; i++) {
+      currTrans[i] = -jump;
+      // console.log(currTrans[i]);
+    }
+  }
+  flag = false;
 
     for(var i=0;i<ammountSls;i++) {
       var slides = document.getElementsByClassName('slide')[i];
@@ -89,6 +141,14 @@ function next() {
 
     currTrans[index-1] = currTrans[index-1] + (widthSl * ammountSls);
     slides.addEventListener("transitionend", switchTrans);
+    // console.log(jump);
+    // console.log((currTrans[1]) +'ct');
+    console.log(index);
+    console.log((currTrans[1]) +'ct');
+
+
+
+
   }
 }
 
