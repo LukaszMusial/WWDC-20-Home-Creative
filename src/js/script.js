@@ -17,9 +17,11 @@ document.addEventListener("DOMContentLoaded", function() {
     currTrans[i] = -jump;
     // console.log(currTrans[i]);
   }
-  window.addEventListener('resize', scale)
+  window.addEventListener('resize', scale);
   document.getElementById('prev-arrow').addEventListener('click', prev);
   document.getElementById('next-arrow').addEventListener('click', next);
+
+
 })
 
 function switchTrans() {
@@ -27,7 +29,14 @@ function switchTrans() {
 }
 
 function scale() {
+  var newSlide = document.getElementsByClassName('slide');
   widthSl = window.innerWidth;
+  jump = widthSl;
+  // slides.style.width = window.innerWidth;
+  for(i=0; i<ammountSls; i++) {
+    newSlide[i].style.width = widthSl;
+    // console.log(currTrans[i]);
+  }
 }
 
 function prev() {
