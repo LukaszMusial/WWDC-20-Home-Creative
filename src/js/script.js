@@ -2,16 +2,16 @@
 
 var slides = document.getElementsByClassName('slide');
 var ammountSls = document.getElementsByClassName('slide').length;
-var sliderWidth = document.getElementById('slider').offsetWidth;
+// var sliderWidth = document.getElementById('slider').offsetWidth;
 // var widthSl = document.getElementById('site-container').offsetWidth; //for not full window
 var widthSl = window.innerWidth; //tu jest problem
 
 
 //eks
-// var slider = document.getElementById('slider');
-// var sliderWidth = (widthSl * ammountSls);
+var slider = document.getElementById('slider');
+var sliderWidth = (widthSl * ammountSls);
 
-
+var oldJump = 0;
 var jump = widthSl; //teraz jest problem ze skokiem reaguje na zmianę ale ma złą wartość
 var index = 0;
 var currTrans = [];
@@ -21,9 +21,9 @@ var flag = true;
 
 
 document.addEventListener("DOMContentLoaded", function() {
-  window.addEventListener('resize', scale);
+
   // eks
-  // slider.style.width = (widthSl * ammountSls) + 'px';
+  slider.style.width = sliderWidth + 'px';
   // slide.style.width = widthSl + 'px';
 
 
@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // }
   document.getElementById('prev-arrow').addEventListener('click', prev);
   document.getElementById('next-arrow').addEventListener('click', next);
+  window.addEventListener('resize', scale);
 
 
 })
@@ -44,7 +45,7 @@ function switchTrans() {
 function scale() {
 
   
-
+  
   // var newSlide = document.getElementsByClassName('slide');
   widthSl = window.innerWidth;
   jump = widthSl;
@@ -55,13 +56,15 @@ function scale() {
   for(i=0; i<ammountSls; i++) {
     // newSlide[i].style.width = widthSl;
     // currTrans[i] = co??????????????????????????????????????????index
-
+    var differnece = currTrans[i] / oldJump;
+    currTrans[i] = jump * differnece;
+    
   }
  
 
   console.log(jump +'jump');
-  // console.log(widthSl+"widthSl");
-  // console.log((currTrans[1]) +'ct');
+  console.log(oldJump+"oldjump");
+  console.log((currTrans[1]) +'ct');
 
 
 }
@@ -94,6 +97,8 @@ function prev() {
       slides.style.opacity = 1;
       currTrans[i] = currTrans[i] + jump;
     }
+    oldJump = jump;
+
 
     var outerSlide = document.getElementsByClassName('slide')[index];
     var transToFront = currTrans[index] - (widthSl * ammountSls);
@@ -106,6 +111,7 @@ function prev() {
     console.log(index);
     console.log((currTrans[1]) +'ct');
 
+// window.addEventListener('resize', scale);
 
 
   }
@@ -132,6 +138,7 @@ function next() {
       slides.style.opacity = 1;
       currTrans[i] = currTrans[i] - jump;
     }
+    oldJump = jump;
 
     var outerSlide = document.getElementsByClassName('slide')[index-1];
     var transToFront = currTrans[index-1] + (widthSl * ammountSls);
@@ -147,6 +154,7 @@ function next() {
     console.log((currTrans[1]) +'ct');
 
 
+// window.addEventListener('resize', scale);
 
 
   }
