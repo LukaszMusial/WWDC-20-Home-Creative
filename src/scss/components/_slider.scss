@@ -1,6 +1,8 @@
 .slider {
 	display: flex;
 	// width: 300vw; in js
+	overflow: hidden;
+	
 
 }
 .slide {

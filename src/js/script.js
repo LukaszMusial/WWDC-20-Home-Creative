@@ -49,8 +49,8 @@ function scale() {
   // var newSlide = document.getElementsByClassName('slide');
   widthSl = window.innerWidth;
   jump = widthSl;
-  sliderWidth = widthSl * ammountSls;
-  slider.style.width = (widthSl * ammountSls) + 'px';
+  sliderWidth = jump * ammountSls;
+  slider.style.width = (jump * ammountSls) + 'px';
 
   // slides.style.width = window.innerWidth;
   for(i=0; i<ammountSls; i++) {
@@ -58,13 +58,34 @@ function scale() {
     // currTrans[i] = co??????????????????????????????????????????index
     var differnece = currTrans[i] / oldJump;
     currTrans[i] = jump * differnece;
+
+    var slides = document.getElementsByClassName('slide')[i];
+    slides.style.transform = 'translateX('+ (currTrans[i]) +'px)';
     
   }
  
+  oldJump = jump;
+  // sliderWidth = oldJump * ammountSls;
+
+  // slider.style.width = (oldJump * ammountSls) + 'px';
+
+
+  //zaktualizować pozycję czyli zmienić na tego samego slajda !!!!!!!!!!!!!!!!
+
+  // for(i=0; i<ammountSls; i++) {
+  //   var outerSlide = document.getElementsByClassName('slide')[index];
+  //   slides.style.transform = 'translateX('+ (currTrans[i] + jump) +'px)';
+  //   slides.style.opacity = 1;
+  //   currTrans[i] = currTrans[i] + jump;
+  // }
+
+
 
   console.log(jump +'jump');
   console.log(oldJump+"oldjump");
   console.log((currTrans[1]) +'ct');
+  console.log(sliderWidth + 'sW');
+
 
 
 }
@@ -110,6 +131,8 @@ function prev() {
     slides.addEventListener("transitionend", switchTrans);
     console.log(index);
     console.log((currTrans[1]) +'ct');
+    console.log(sliderWidth + 'sW');
+
 
 // window.addEventListener('resize', scale);
 
@@ -152,6 +175,8 @@ function next() {
     // console.log((currTrans[1]) +'ct');
     console.log(index);
     console.log((currTrans[1]) +'ct');
+    console.log(sliderWidth + 'sW');
+
 
 
 // window.addEventListener('resize', scale);
