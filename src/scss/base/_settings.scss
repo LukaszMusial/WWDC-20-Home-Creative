@@ -24,10 +24,10 @@ body, html {
   // left: 0px;
 }
 
-section {
+.center-section {
   margin: 0 auto;
   max-width: 1200px;
-  // padding: 0 35px; ????
+  padding: 0 35px;
   // background-color: red;
   @media (min-width: 1200px) {
     padding: 0;
