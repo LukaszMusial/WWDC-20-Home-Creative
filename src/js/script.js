@@ -1,189 +1,249 @@
 // ===========================  SLIDER ===========================
 
-var slides = document.getElementsByClassName('slide');
-var ammountSls = document.getElementsByClassName('slide').length;
-// var sliderWidth = document.getElementById('slider').offsetWidth;
-// var widthSl = document.getElementById('site-container').offsetWidth; //for not full window
-var widthSl = window.innerWidth; //tu jest problem
-
-
-//eks
-var slider = document.getElementById('slider');
-var sliderWidth = (widthSl * ammountSls);
-
-var oldJump = 0;
-var jump = widthSl; //teraz jest problem ze skokiem reaguje na zmianę ale ma złą wartość
-var index = 0;
-var currTrans = [];
-var transistioning = true;
-var flag = true;
-
-
-
 document.addEventListener("DOMContentLoaded", function() {
 
-  // eks
-  slider.style.width = sliderWidth + 'px';
-  // slide.style.width = widthSl + 'px';
-
-
-  // for(i=0; i<ammountSls; i++) {
-  //   currTrans[i] = -jump;
-  //   // console.log(currTrans[i]);
-  // }
-  document.getElementById('prev-arrow').addEventListener('click', prev);
-  document.getElementById('next-arrow').addEventListener('click', next);
-  window.addEventListener('resize', scale);
-
+//infinitySlider()
+  infinitySlider(slide, slider, prev-arrow, next-arrow);
 
 })
 
-function switchTrans() {
-  transistioning = true;
-}
+function infinitySlider(slideClass, sliderId, moveLeftButton, moveRightButton)  {
 
-function scale() {
+  slider.style.width = sliderWidth + 'px';
+  window.addEventListener('resize', scale);
+  document.getElementById("'"+ moveLeftButton +"'").addEventListener('click', prev);
+  document.getElementById("'"+ moveRightButton +"'").addEventListener('click', next);
 
-  
-  
-  // var newSlide = document.getElementsByClassName('slide');
-  widthSl = window.innerWidth;
-  jump = widthSl;
-  sliderWidth = jump * ammountSls;
-  slider.style.width = (jump * ammountSls) + 'px';
+  var slides = document.getElementsByClassName("'"+ slideClass +"'");
+  var ammountSls = document.getElementsByClassName("'"+ slideClass +"'").length;
+  var widthSl = window.innerWidth;
+  var slider = document.getElementById("'"+ sliderId +"'");
+  var sliderWidth = (widthSl * ammountSls);
 
-  // slides.style.width = window.innerWidth;
-  for(i=0; i<ammountSls; i++) {
-    // newSlide[i].style.width = widthSl;
-    // currTrans[i] = co??????????????????????????????????????????index
-    var differnece = currTrans[i] / oldJump;
-    currTrans[i] = jump * differnece;
+  var oldJump = 0;
+  var jump = widthSl;
+  var index = 0;
+  var currTrans = [];
+  var transistioning = true;
+  var flag = true;
 
-    var slides = document.getElementsByClassName('slide')[i];
-    slides.style.transform = 'translateX('+ (currTrans[i]) +'px)';
-    
+  console.log(ammountSls);
+
+
+
+
+
+  function switchTrans() {
+    transistioning = true;
   }
- 
-  oldJump = jump;
-  // sliderWidth = oldJump * ammountSls;
 
-  // slider.style.width = (oldJump * ammountSls) + 'px';
+  function scale(slideClass) {
 
+    widthSl = window.innerWidth;
+    jump = widthSl;
+    sliderWidth = jump * ammountSls;
+    slider.style.width = (jump * ammountSls) + 'px';
 
-  //zaktualizować pozycję czyli zmienić na tego samego slajda !!!!!!!!!!!!!!!!
+    for(i=0; i<ammountSls; i++) {
 
-  // for(i=0; i<ammountSls; i++) {
-  //   var outerSlide = document.getElementsByClassName('slide')[index];
-  //   slides.style.transform = 'translateX('+ (currTrans[i] + jump) +'px)';
-  //   slides.style.opacity = 1;
-  //   currTrans[i] = currTrans[i] + jump;
-  // }
-
-
-
-  console.log(jump +'jump');
-  console.log(oldJump+"oldjump");
-  console.log((currTrans[1]) +'ct');
-  console.log(sliderWidth + 'sW');
-
-
-
-}
-
-function prev() {
-  
-  if(transistioning) {
-    transistioning = false;
-    index = index % ammountSls;
-
-    index--;
-
-    if (index == -1) {
-      index = ammountSls - 1;
+      var differnece = currTrans[i] / oldJump;
+      currTrans[i] = jump * differnece;
+      var slides = document.getElementsByClassName("'"+ slideClass +"'")[i];
+      slides.style.transform = 'translateX('+ (currTrans[i]) +'px)';
     }
+    oldJump = jump;
+  }
+
+
+  function prev(slideClass) {
+    
+    if(transistioning) {
+      transistioning = false;
+      index = index % ammountSls;
+
+      index--;
+
+      if (index == -1) {
+        index = ammountSls - 1;
+      }
+      if(flag) {
+        for(i=0; i<ammountSls; i++) {
+          currTrans[i] = -jump;
+        }
+      }
+      flag = false;
+
+      for(var i=0;i<ammountSls;i++) {
+        var slides = document.getElementsByClassName("'"+ slideClass +"'")[i];
+        slides.style.transform = 'translateX('+ (currTrans[i] + jump) +'px)';
+        slides.style.opacity = 1;
+        currTrans[i] = currTrans[i] + jump;
+      }
+
+      oldJump = jump;
+
+      var outerSlide = document.getElementsByClassName("'"+ slideClass +"'")[index];
+      var transToFront = currTrans[index] - (widthSl * ammountSls);
+      outerSlide.style.transform = 'translateX('+ transToFront +'px)';
+      outerSlide.style.opacity = 0;
+      currTrans[index] = currTrans[index] - (widthSl * ammountSls);
+      
+      slides.addEventListener("transitionend", switchTrans);
+    }
+  }
+
+  function next(slideClass) {
+    
+    if(transistioning) {
+      transistioning = false;
+      index = index % ammountSls;
+      index++;
+
     if(flag) {
       for(i=0; i<ammountSls; i++) {
         currTrans[i] = -jump;
-        // console.log(currTrans[i]);
       }
     }
     flag = false;
 
+      for(var i=0;i<ammountSls;i++) {
+        var slides = document.getElementsByClassName("'"+ slideClass +"'")[i];
+        slides.style.transform = 'translateX('+ (currTrans[i] - jump) +'px)';
+        slides.style.opacity = 1;
+        currTrans[i] = currTrans[i] - jump;
+      }
+      oldJump = jump;
 
+      var outerSlide = document.getElementsByClassName("'"+ slideClass+ "'")[index-1];
+      var transToFront = currTrans[index-1] + (widthSl * ammountSls);
 
+      outerSlide.style.transform = 'translateX('+ transToFront +'px)';
+      outerSlide.style.opacity = 0;
 
-    for(var i=0;i<ammountSls;i++) {
-      var slides = document.getElementsByClassName('slide')[i];
-      slides.style.transform = 'translateX('+ (currTrans[i] + jump) +'px)';
-      slides.style.opacity = 1;
-      currTrans[i] = currTrans[i] + jump;
+      currTrans[index-1] = currTrans[index-1] + (widthSl * ammountSls);
+      slides.addEventListener("transitionend", switchTrans);
     }
-    oldJump = jump;
-
-
-    var outerSlide = document.getElementsByClassName('slide')[index];
-    var transToFront = currTrans[index] - (widthSl * ammountSls);
-    outerSlide.style.transform = 'translateX('+ transToFront +'px)';
-    outerSlide.style.opacity = 0;
-
-    currTrans[index] = currTrans[index] - (widthSl * ammountSls);
-    
-    slides.addEventListener("transitionend", switchTrans);
-    console.log(index);
-    console.log((currTrans[1]) +'ct');
-    console.log(sliderWidth + 'sW');
-
-
-// window.addEventListener('resize', scale);
-
-
   }
 }
 
-function next() {
+
+// // ===========================  SLIDER ===========================
+
+// var slides = document.getElementsByClassName('slide');
+// var ammountSls = document.getElementsByClassName('slide').length;
+// var widthSl = window.innerWidth;
+// var slider = document.getElementById('slider');
+// var sliderWidth = (widthSl * ammountSls);
+
+// var oldJump = 0;
+// var jump = widthSl;
+// var index = 0;
+// var currTrans = [];
+// var transistioning = true;
+// var flag = true;
+
+
+
+// document.addEventListener("DOMContentLoaded", function() {
+
+//   slider.style.width = sliderWidth + 'px';
+//   document.getElementById('prev-arrow').addEventListener('click', prev);
+//   document.getElementById('next-arrow').addEventListener('click', next);
+//   window.addEventListener('resize', scale);
+
+// })
+
+// function switchTrans() {
+//   transistioning = true;
+// }
+
+// function scale() {
+
+//   widthSl = window.innerWidth;
+//   jump = widthSl;
+//   sliderWidth = jump * ammountSls;
+//   slider.style.width = (jump * ammountSls) + 'px';
+
+//   for(i=0; i<ammountSls; i++) {
+
+//     var differnece = currTrans[i] / oldJump;
+//     currTrans[i] = jump * differnece;
+//     var slides = document.getElementsByClassName('slide')[i];
+//     slides.style.transform = 'translateX('+ (currTrans[i]) +'px)';
+//   }
+//   oldJump = jump;
+// }
+
+
+// function prev() {
   
-  if(transistioning) {
-    transistioning = false;
-    index = index % ammountSls;
-    index++;
+//   if(transistioning) {
+//     transistioning = false;
+//     index = index % ammountSls;
 
-  if(flag) {
-    for(i=0; i<ammountSls; i++) {
-      currTrans[i] = -jump;
-      // console.log(currTrans[i]);
-    }
-  }
-  flag = false;
+//     index--;
 
-    for(var i=0;i<ammountSls;i++) {
-      var slides = document.getElementsByClassName('slide')[i];
-      slides.style.transform = 'translateX('+ (currTrans[i] - jump) +'px)';
-      slides.style.opacity = 1;
-      currTrans[i] = currTrans[i] - jump;
-    }
-    oldJump = jump;
+//     if (index == -1) {
+//       index = ammountSls - 1;
+//     }
+//     if(flag) {
+//       for(i=0; i<ammountSls; i++) {
+//         currTrans[i] = -jump;
+//       }
+//     }
+//     flag = false;
 
-    var outerSlide = document.getElementsByClassName('slide')[index-1];
-    var transToFront = currTrans[index-1] + (widthSl * ammountSls);
+//     for(var i=0;i<ammountSls;i++) {
+//       var slides = document.getElementsByClassName('slide')[i];
+//       slides.style.transform = 'translateX('+ (currTrans[i] + jump) +'px)';
+//       slides.style.opacity = 1;
+//       currTrans[i] = currTrans[i] + jump;
+//     }
 
-    outerSlide.style.transform = 'translateX('+ transToFront +'px)';
-    outerSlide.style.opacity = 0;
+//     oldJump = jump;
 
-    currTrans[index-1] = currTrans[index-1] + (widthSl * ammountSls);
-    slides.addEventListener("transitionend", switchTrans);
-    // console.log(jump);
-    // console.log((currTrans[1]) +'ct');
-    console.log(index);
-    console.log((currTrans[1]) +'ct');
-    console.log(sliderWidth + 'sW');
+//     var outerSlide = document.getElementsByClassName('slide')[index];
+//     var transToFront = currTrans[index] - (widthSl * ammountSls);
+//     outerSlide.style.transform = 'translateX('+ transToFront +'px)';
+//     outerSlide.style.opacity = 0;
+//     currTrans[index] = currTrans[index] - (widthSl * ammountSls);
+    
+//     slides.addEventListener("transitionend", switchTrans);
+//   }
+// }
 
+// function next() {
+  
+//   if(transistioning) {
+//     transistioning = false;
+//     index = index % ammountSls;
+//     index++;
 
+//   if(flag) {
+//     for(i=0; i<ammountSls; i++) {
+//       currTrans[i] = -jump;
+//     }
+//   }
+//   flag = false;
 
-// window.addEventListener('resize', scale);
+//     for(var i=0;i<ammountSls;i++) {
+//       var slides = document.getElementsByClassName('slide')[i];
+//       slides.style.transform = 'translateX('+ (currTrans[i] - jump) +'px)';
+//       slides.style.opacity = 1;
+//       currTrans[i] = currTrans[i] - jump;
+//     }
+//     oldJump = jump;
 
+//     var outerSlide = document.getElementsByClassName('slide')[index-1];
+//     var transToFront = currTrans[index-1] + (widthSl * ammountSls);
 
-  }
-}
+//     outerSlide.style.transform = 'translateX('+ transToFront +'px)';
+//     outerSlide.style.opacity = 0;
+
+//     currTrans[index-1] = currTrans[index-1] + (widthSl * ammountSls);
+//     slides.addEventListener("transitionend", switchTrans);
+//   }
+// }
 
 // ===========================  AJAX LOADING GALLERY ===========================
 
