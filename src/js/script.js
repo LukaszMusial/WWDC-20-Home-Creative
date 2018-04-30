@@ -1,30 +1,22 @@
 // ===========================  SLIDER ===========================
 
 document.addEventListener("DOMContentLoaded", function() {
-// var slideStr = 'slide';
-// var sliderStr = 'slider';
-// var prevArrowStr = 'prev-arrow';
-// var nextArrowStr  = 'next-arrow';
-//infinitySlider()
+
 
 
 infinitySlider('slide','slider','prev-arrow','next-arrow');
 
 })
 
+
+
 function infinitySlider(slideClass, sliderId, moveLeftButton, moveRightButton)  {
 
-  slider.style.width = sliderWidth + 'px';
-  window.addEventListener('resize', scale);
-  document.getElementById(moveLeftButton).addEventListener('click', prev);
-  document.getElementById(moveRightButton).addEventListener('click', next);
-
+  var slider = document.getElementById(sliderId);
   var slides = document.getElementsByClassName(slideClass);
   var ammountSls = document.getElementsByClassName(slideClass).length;
   var widthSl = window.innerWidth;
-  slider = document.getElementById(sliderId);
   var sliderWidth = (widthSl * ammountSls);
-
   var oldJump = 0;
   var jump = widthSl;
   var index = 0;
@@ -32,7 +24,11 @@ function infinitySlider(slideClass, sliderId, moveLeftButton, moveRightButton)  
   var transistioning = true;
   var flag = true;
 
-  console.log(slider);
+  slider.style.width = sliderWidth + 'px';
+  window.addEventListener('resize', scale);
+  document.getElementById(moveLeftButton).addEventListener('click', prev);
+  document.getElementById(moveRightButton).addEventListener('click', next);
+
   console.log(ammountSls);
 
 
@@ -43,7 +39,7 @@ function infinitySlider(slideClass, sliderId, moveLeftButton, moveRightButton)  
     transistioning = true;
   }
 
-  function scale(slideClass) {
+  function scale() {
 
     widthSl = window.innerWidth;
     jump = widthSl;
@@ -58,10 +54,11 @@ function infinitySlider(slideClass, sliderId, moveLeftButton, moveRightButton)  
       slides.style.transform = 'translateX('+ (currTrans[i]) +'px)';
     }
     oldJump = jump;
+
   }
 
 
-  function prev(slideClass) {
+  function prev() {
     
     if(transistioning) {
       transistioning = false;
@@ -98,7 +95,7 @@ function infinitySlider(slideClass, sliderId, moveLeftButton, moveRightButton)  
     }
   }
 
-  function next(slideClass) {
+  function next() {
     
     if(transistioning) {
       transistioning = false;
