@@ -1,9 +1,14 @@
 // ===========================  SLIDER ===========================
 
 document.addEventListener("DOMContentLoaded", function() {
-
+// var slideStr = 'slide';
+// var sliderStr = 'slider';
+// var prevArrowStr = 'prev-arrow';
+// var nextArrowStr  = 'next-arrow';
 //infinitySlider()
-  infinitySlider(slide, slider, prev-arrow, next-arrow);
+
+
+infinitySlider('slide','slider','prev-arrow','next-arrow');
 
 })
 
@@ -11,13 +16,13 @@ function infinitySlider(slideClass, sliderId, moveLeftButton, moveRightButton)  
 
   slider.style.width = sliderWidth + 'px';
   window.addEventListener('resize', scale);
-  document.getElementById("'"+ moveLeftButton +"'").addEventListener('click', prev);
-  document.getElementById("'"+ moveRightButton +"'").addEventListener('click', next);
+  document.getElementById(moveLeftButton).addEventListener('click', prev);
+  document.getElementById(moveRightButton).addEventListener('click', next);
 
-  var slides = document.getElementsByClassName("'"+ slideClass +"'");
-  var ammountSls = document.getElementsByClassName("'"+ slideClass +"'").length;
+  var slides = document.getElementsByClassName(slideClass);
+  var ammountSls = document.getElementsByClassName(slideClass).length;
   var widthSl = window.innerWidth;
-  var slider = document.getElementById("'"+ sliderId +"'");
+  slider = document.getElementById(sliderId);
   var sliderWidth = (widthSl * ammountSls);
 
   var oldJump = 0;
@@ -27,6 +32,7 @@ function infinitySlider(slideClass, sliderId, moveLeftButton, moveRightButton)  
   var transistioning = true;
   var flag = true;
 
+  console.log(slider);
   console.log(ammountSls);
 
 
@@ -48,7 +54,7 @@ function infinitySlider(slideClass, sliderId, moveLeftButton, moveRightButton)  
 
       var differnece = currTrans[i] / oldJump;
       currTrans[i] = jump * differnece;
-      var slides = document.getElementsByClassName("'"+ slideClass +"'")[i];
+      var slides = document.getElementsByClassName(slideClass)[i];
       slides.style.transform = 'translateX('+ (currTrans[i]) +'px)';
     }
     oldJump = jump;
@@ -74,7 +80,7 @@ function infinitySlider(slideClass, sliderId, moveLeftButton, moveRightButton)  
       flag = false;
 
       for(var i=0;i<ammountSls;i++) {
-        var slides = document.getElementsByClassName("'"+ slideClass +"'")[i];
+        var slides = document.getElementsByClassName(slideClass)[i];
         slides.style.transform = 'translateX('+ (currTrans[i] + jump) +'px)';
         slides.style.opacity = 1;
         currTrans[i] = currTrans[i] + jump;
@@ -82,7 +88,7 @@ function infinitySlider(slideClass, sliderId, moveLeftButton, moveRightButton)  
 
       oldJump = jump;
 
-      var outerSlide = document.getElementsByClassName("'"+ slideClass +"'")[index];
+      var outerSlide = document.getElementsByClassName(slideClass)[index];
       var transToFront = currTrans[index] - (widthSl * ammountSls);
       outerSlide.style.transform = 'translateX('+ transToFront +'px)';
       outerSlide.style.opacity = 0;
@@ -107,14 +113,14 @@ function infinitySlider(slideClass, sliderId, moveLeftButton, moveRightButton)  
     flag = false;
 
       for(var i=0;i<ammountSls;i++) {
-        var slides = document.getElementsByClassName("'"+ slideClass +"'")[i];
+        var slides = document.getElementsByClassName(slideClass)[i];
         slides.style.transform = 'translateX('+ (currTrans[i] - jump) +'px)';
         slides.style.opacity = 1;
         currTrans[i] = currTrans[i] - jump;
       }
       oldJump = jump;
 
-      var outerSlide = document.getElementsByClassName("'"+ slideClass+ "'")[index-1];
+      var outerSlide = document.getElementsByClassName(slideClass)[index-1];
       var transToFront = currTrans[index-1] + (widthSl * ammountSls);
 
       outerSlide.style.transform = 'translateX('+ transToFront +'px)';
