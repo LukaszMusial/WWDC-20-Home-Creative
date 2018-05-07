@@ -1,25 +1,32 @@
 .clients {
 	
 }
-.clients-logos {
-	height: 100%;
+.slider2 {
+	// height: 100%;
+	// width: 300
 	display: flex;
-	justify-content: center;
-	background-color: blue;
-	margin: 20px;
+	// justify-content: center;
+	// background-color: blue;
+	// margin: 20px;
 	overflow: hidden;
 	img {
 	  object-fit: none;
 
 	}
 }
+.logos-wrapper {
+	display: flex;
+	// width: 100%;
+
+}
 .slide2 {
+	background-color: cyan;
 	// background-size: cover;
-	height: 30%;
-	width: 30%;
+	// height: 100%;
+	width: 1100px;
 	display: flex;
 	// justify-content: center;
-	transform: translateX(-30%);
+	// transform: translateX(-1100px);
 }
 
 .clients-arrows {
