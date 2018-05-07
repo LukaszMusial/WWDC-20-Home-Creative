@@ -1,12 +1,12 @@
-.slider {
+.slider1 {
 	display: flex;
 	// width: 300vw; in js
 	overflow: hidden;
 	
 
 }
-.slide {
-	background: url(/img/welcome-bg_01.jpg) no-repeat;
+.slide1 {
+	// background: url(/img/welcome-bg_01.jpg) no-repeat;
 	background-size: cover;
 	height: 100vh;
 	width: 100vw;
@@ -39,28 +39,28 @@
 	width: rem(18);
 	cursor: pointer;
 }
-// .next-arrow	{
-// 	position: absolute;
-// 	top: 50%;
-// 	right: 15%;
-// 	background: url(/img/rightsliderarrow.svg) no-repeat;
-// 	background-size: cover;
-// 	background-color: black;
-// 	height: rem(34);
-// 	width: rem(18);
-// 	cursor: pointer;
+.next-arrow	{
+	position: absolute;
+	top: 50%;
+	right: 15%;
+	background: url(/img/rightsliderarrow.svg) no-repeat;
+	background-size: cover;
+	background-color: black;
+	height: rem(34);
+	width: rem(18);
+	cursor: pointer;
 	
-// }
+}
 
-// .slide-bg1 {
-// 	background-color: darkcyan;
-// }
+.slide-bg1 {
+	background-color: darkcyan;
+}
 
-// .slide-bg2 {
-// 	background-color: olive;
+.slide-bg2 {
+	background-color: olive;
 
-// }
-// .slide-bg3 {
-// 	background-color: darkgreen;
+}
+.slide-bg3 {
+	background-color: darkgreen;
 
-// }
+}

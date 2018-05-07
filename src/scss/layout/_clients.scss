@@ -2,13 +2,39 @@
 	
 }
 .clients-logos {
-	// display: flex;
+	height: 100%;
+	display: flex;
 	justify-content: center;
 	background-color: blue;
 	margin: 20px;
+	overflow: hidden;
+	img {
+	  object-fit: none;
+
+	}
+}
+.slide2 {
+	// background-size: cover;
+	height: 30%;
+	width: 30%;
+	display: flex;
+	// justify-content: center;
+	transform: translateX(-30%);
 }
 
 .clients-arrows {
 	display: flex;
 	justify-content: center;
+	background-color: pink;
+}
+.prev-arrow-brown,
+.next-arrow-brown {
+ cursor: pointer;
+ margin: rem(25);
+ // height: 100%;
+ // width: 100%;
+}
+
+.next-arrow-brown {
+	
 }

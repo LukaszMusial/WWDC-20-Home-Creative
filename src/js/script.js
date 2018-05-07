@@ -4,7 +4,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-infinitySlider('slide','slider','prev-arrow','next-arrow');
+infinitySlider('slide1','slider1','prev-arrow','next-arrow');
+infinitySlider('slide2','slider2','left-brown-arrow','right-brown-arrow');
+
 
 })
 
