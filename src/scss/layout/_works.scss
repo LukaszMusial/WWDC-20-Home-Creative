@@ -1,0 +1,44 @@
+.categories {
+	display: flex;
+	justify-content: center;
+	.categories__list {
+		list-style: none;
+		display: flex;
+		justify-content: space-between;
+		min-width: rem(580);
+		padding:0;
+		margin: 0;
+	}		
+	.category__link {
+		color: $color-text;
+		font-family: $font-primary;
+		font-size: rem(12);
+		text-decoration: none;
+		&:hover {
+			color: rgba(0,0,0, .9)
+		}
+	}
+}
+@media(max-width: 720px) {
+	.categories,
+	.categories__list,
+	.categories__list {
+		display: none;
+	}
+}
+
+
+.gallery-row {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-bottom: rem(40);
+}
+.gallery-load {
+	flex-wrap: nowrap;
+}
+@media (max-width: 950px) {
+	.gallery-load {
+		flex-wrap: wrap;
+	}
+}

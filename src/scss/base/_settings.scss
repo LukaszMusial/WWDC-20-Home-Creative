@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Serif');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700');
+
+
+html {
+  @include fluid-type($min_width, $max_width, $min_font, $max_font);
+  box-sizing: border-box;
+  .article__text {
+    $min_font: 16px;
+    $max_font: 19px;
+    @include fluid-type($min_width, $max_width, $min_font, $max_font);
+  }
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+body, html {
+  // overflow: hidden;
+  // position: absolute;
+  // width: 100%;
+  // left: 0px;
+}
+
+.center-section {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 35px;
+  // background-color: red;
+  @media (min-width: 1200px) {
+    padding: 0;
+  }
+}
+
+.site-container {
+  position: relative; // ???
+}
+
+img {
+  display: block;
+  object-fit: scale-down;
+  max-height: 100%;
+  max-width: 100%;
+}

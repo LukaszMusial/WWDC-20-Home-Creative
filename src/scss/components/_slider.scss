@@ -1,0 +1,66 @@
+.slider1 {
+	display: flex;
+	// width: 300vw; in js
+	// overflow: hidden;
+	
+
+}
+.slide1 {
+	// background: url(/img/welcome-bg_01.jpg) no-repeat;
+	background-size: cover;
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	transform: translateX(-100vw);
+}
+
+
+
+.animate {
+	-webkit-transition-duration: 1s;
+    -moz-transition-duration: 1s;
+    -o-transition-duration: 1s;
+    transition-duration: 1s;
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -o-transition-property: -o-transform;
+    transition-property: transform;
+}
+
+.prev-arrow	{
+	position: absolute;
+	top: 50%;
+	left: 15%;
+	background: url(/img/leftsliderarrow.svg) no-repeat;
+	background-size: cover;
+	background-color: green;
+	height: rem(34);
+	width: rem(18);
+	cursor: pointer;
+}
+.next-arrow	{
+	position: absolute;
+	top: 50%;
+	right: 15%;
+	background: url(/img/rightsliderarrow.svg) no-repeat;
+	background-size: cover;
+	background-color: black;
+	height: rem(34);
+	width: rem(18);
+	cursor: pointer;
+	
+}
+
+.slide-bg1 {
+	background-color: darkcyan;
+}
+
+.slide-bg2 {
+	background-color: olive;
+
+}
+.slide-bg3 {
+	background-color: darkgreen;
+
+}

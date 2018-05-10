@@ -1,0 +1,35 @@
+@import "base/normalize";
+@import "base/variables";
+@import "base/mixins";
+@import "base/settings";
+
+
+
+@import "components/nav";
+@import "components/section-headers";
+@import "components/buttons";
+@import "components/articles";
+@import "components/slider";
+@import "components/gallery";
+
+
+@import "layout/welcome";
+@import "layout/about";
+@import "layout/works";
+@import "layout/clients";
+
+// @import "layout/clients";
+// @import "layout/services";
+// @import "layout/purchaes-now";
+// @import "layout/our-team";
+// @import "layout/blog";
+// @import "layout/contact";
+
+@import "base/helpers";
+
+
+
+
+
+
+

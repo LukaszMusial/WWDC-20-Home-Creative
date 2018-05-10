@@ -1,0 +1,66 @@
+.clients {
+	overflow: hidden;
+	
+}
+.slider2 {
+
+	// height: 100%;
+	// width: 1100px;
+	display: flex;
+	// justify-content: center;
+	// background-color: blue;
+	// padding: 5px;
+	// margin: 20px;
+	// img {
+	//   object-fit: none;
+
+	// }
+}
+
+.slide2 {
+	
+	background-color: cyan;
+	background-size: cover;
+	height: 140px;
+	// float: left;
+	// width: 100%;
+	width: 1500px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	// transform: translateX(-1800px);
+}
+
+.clients-logos__logo {
+	width: 140px;
+	height: 120px;
+}
+.clients-arrows {
+	display: flex;
+	justify-content: center;
+	background-color: pink;
+}
+.prev-arrow-brown,
+.next-arrow-brown {
+ cursor: pointer;
+ margin: rem(25);
+ // height: 100%;
+ // width: 100%;
+}
+
+.next-arrow-brown {
+	
+}
+
+.logo-bg1 {
+	background: url(/img/clients_01.png) no-repeat;
+}
+.logo-bg2 {
+	background: url(/img/clients_02.png) no-repeat;
+}
+.logo-bg3 {
+	background: url(/img/clients_03.png) no-repeat;
+}
+.logo-bg4 {
+	background: url(/img/clients_04.png) no-repeat;
+}
