@@ -5,19 +5,23 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 infinitySlider('slide1','slider1','prev-arrow','next-arrow');
-infinitySlider('slide2','slider2','left-brown-arrow','right-brown-arrow');
+infinitySlider('slide2','slider2','left-brown-arrow','right-brown-arrow','clients');
 
 
 })
 
 
 
-function infinitySlider(slideClass, sliderId, moveLeftButton, moveRightButton)  {
+function infinitySlider(slideClass, sliderId, moveLeftButton, moveRightButton, wrapper)  {
 
   var slider = document.getElementById(sliderId);
+  var section = document.getElementById(wrapper);
   var slides = document.getElementsByClassName(slideClass);
   var ammountSls = document.getElementsByClassName(slideClass).length;
-  var widthSl = window.innerWidth;
+  var widthSl;
+  if (wrapper) { widthSl = section.clientWidth }
+  else {widthSl = window.innerWidth} 
+
   var sliderWidth = (widthSl * ammountSls);
   var oldJump = 0;
   var jump = widthSl;
@@ -25,6 +29,7 @@ function infinitySlider(slideClass, sliderId, moveLeftButton, moveRightButton)  
   var currTrans = [];
   var transistioning = true;
   var flag = true;
+
 
   slider.style.width = sliderWidth + 'px';
   window.addEventListener('resize', scale);
@@ -43,7 +48,8 @@ function infinitySlider(slideClass, sliderId, moveLeftButton, moveRightButton)  
 
   function scale() {
 
-    widthSl = window.innerWidth;
+    if (wrapper) { widthSl = section.clientWidth }
+    else {widthSl = window.innerWidth}
     jump = widthSl;
     sliderWidth = jump * ammountSls;
     slider.style.width = (jump * ammountSls) + 'px';
