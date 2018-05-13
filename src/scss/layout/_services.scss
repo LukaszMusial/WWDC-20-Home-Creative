@@ -1,0 +1,43 @@
+.services {
+
+}
+
+.services-boxes-wrapper {
+	// display: inline;
+	// margin: 0 auto;
+	text-align: center;
+}
+
+.services-box {
+	display: inline-block;
+	width: 340px;
+	height: 290px;
+	border: 1px solid $color-primary;
+	margin-left: 40px;
+	margin-bottom: 40px;
+	@media(max-width: 440px) {
+		// height: 100%;
+		width: 100%;
+		margin-left: 0;
+
+		// background-color: pink;
+	}
+}
+.services-box__icon {
+	margin: 50px auto 0px auto;
+	height: 70px;
+	width: 190px;
+
+
+}
+.services-box__header {
+	font-family: $font-primary;
+	color: $color-text-header;
+	font-size: rem(18);
+}
+.services-box__text {
+	font-family: $font-secondary;
+	color: $color-text;
+	font-size: rem(12);
+	margin: rem(25) rem(38) 0 rem(38);
+}
