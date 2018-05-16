@@ -1,6 +1,5 @@
-.gallery__thumbnail__text--modifier {
+.gallery__thumbnail__text--o-t {
 	color: white;
-	background-color: pink;
 	display: inline;
 	border-top: 2px solid white;
 }
@@ -12,3 +11,21 @@
 // 		border-top: 2px solid white;
 // 	}
 // }
+@media (min-width: 951px) {
+	.gallery__thumbnail:hover {
+		.gallery__thumbnail__description--o-t {
+			display: inline-block;
+		}
+		.gallery__thumbnail__header--o-t {
+			transform: translateY(270px);
+			display: inline-block;
+
+		}
+		.gallery__thumbnail__text--o-t {
+			transform: translateY(270px);
+			display: inline-block;
+			border-top: 2px solid white;
+		}
+	}
+}
+
