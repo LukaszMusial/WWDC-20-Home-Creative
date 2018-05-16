@@ -43,3 +43,11 @@
 		flex-wrap: wrap;
 	}
 }
+.wrapper-thumbnail__description--works {
+		border: 15px solid rgba(248, 213, 190, .2);
+	}
+.gallery__thumbnail:hover {
+	.wrapper-thumbnail__description--works {
+		border: 15px solid rgba(248, 213, 190, .2);
+	}
+}
