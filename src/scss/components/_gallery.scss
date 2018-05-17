@@ -68,12 +68,14 @@
 			background: rgba(151, 115, 93, .9);
 		}
 		.gallery__thumbnail__header {
+			display: inline;
 			color: $color-secondary;
 			font-family: $font-primary;
 			font-size: rem(13);
 			margin: rem(5) 0 0 rem(30) ;
 		}
 		.gallery__thumbnail__text {
+			display: inline;
 			font-family: $font-secondary;
 			font-size: rem(12);
 			color: $color-secondary;
@@ -81,6 +83,7 @@
 			margin: rem(5) 0 rem(5) rem(30);
 		}
 		.btn--gallery {
+			display: inline;
 			max-width: rem(100);
 			align-self: center;
 			margin-top: rem(60);
