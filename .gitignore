@@ -20,3 +20,4 @@ Desktop.ini
 
 # Windows shortcuts
 *.lnk
+src/scss/layout/_contact.scss
