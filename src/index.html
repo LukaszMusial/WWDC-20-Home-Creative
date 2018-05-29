@@ -456,16 +456,24 @@
                     </div>
                     <form class="forms">
                         <fieldset class="forms-wrapper">
-                            <label for="username" class="forms__label">Name:</label>
-                            <input type="text" class="forms__input username" id="username" name="username">
-                            <label for="email" class="forms__label">E-mail:</label>
-                            <input type="email" class="forms__input email" id="email" name="email">
+                            <div class="input-wrapper">
+                                <label for="username" class="forms__label">Name:</label>
+                                <input type="text" class="forms__input username" id="username" name="username">
+                            </div>
+                            <div class="input-wrapper">
+                                <label for="email" class="forms__label">E-mail:</label>
+                                <input type="email" class="forms__input email" id="email" name="email">
+                            </div>
                         </fieldset>
                         <fieldset class="forms-wrapper">
-                            <label for="subject" class="forms__label">Subject:</label>
-                            <input type="text" class="forms__input subject" id="subject" name="subject">
-                            <label for="textarea" class="forms__label">Message:</label>
-                            <textarea name="textarea" class="forms__input textarea" id="textarea" rows="7" cols="30">Message</textarea>
+                            <div class="input-wrapper">
+                                <label for="subject" class="forms__label">Subject:</label>
+                                <input type="text" class="forms__input subject" id="subject" name="subject">
+                            </div>
+                            <div class="input-wrapper">
+                                <label for="textarea" class="forms__label">Message:</label>
+                                <textarea name="textarea" class="forms__input textarea" id="textarea" rows="7" cols="30">Message</textarea>
+                            </div>
                         </fieldset>
                         <input type="button" value="Send message">
                     </form>
