@@ -12,10 +12,11 @@
 	max-width: rem(350);
 	padding: rem(11);
 	font-family: $font-secondary;
-	color: darken($color-text);
+	// color: darken($color-text);
 }
 
 #map {
-	height: rem(600);
+	height: rem(400);
+	max-width: none;
 }
 

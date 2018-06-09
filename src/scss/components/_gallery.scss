@@ -5,6 +5,13 @@
 	position: relative;
 	height: 100%;
 
+	.gallery__thumbnail__img {
+		display: block;
+		object-fit: scale-down;
+		max-height: 100%;
+		max-width: 100%;
+	}
+
 	.wrapper-thumbnail__description	{
 		width: 100%;
 		bottom: 0;

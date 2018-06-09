@@ -33,6 +33,9 @@
 		border-bottom: 11px solid $color-primary;
 	}
 	.about-icons__icon {
+		display: block;
+		max-height: 100%;
+		max-width: 100%;
 		object-fit: fill;
 		// background: red;
 		height: 65px;
