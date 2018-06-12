@@ -1,0 +1,19 @@
+.forms-wrapper {
+	border-style: none;
+}
+.input-wrapper {
+	display: flex;
+	flex-direction: column;
+}
+.forms__label {
+	font-family: $font-secondary;
+	color: $color-primary;
+	margin: rem(10) 0 rem(10) 0;
+}
+.forms__input {
+	border: solid 1px $color-primary;
+	max-width: rem(350);
+	padding: rem(11);
+	font-family: $font-secondary;
+	// color: darken($color-text);
+}

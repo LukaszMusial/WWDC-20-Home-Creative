@@ -1,22 +1,28 @@
-
-.forms-wrapper {
-	border-style: none;
-}
-.input-wrapper {
-	display: flex;
-	flex-direction: column;
-}
-
-.forms__input {
-	border: solid 1px $color-primary;
-	max-width: rem(350);
-	padding: rem(11);
-	font-family: $font-secondary;
-	// color: darken($color-text);
-}
-
 #map {
 	height: rem(400);
 	max-width: none;
 }
-
+.contact__adress-wrapper {
+	display: flex;
+}
+.contact__icon {
+	height: rem(50);
+	width: rem(50);
+}
+.contact__header-text {
+	font-family: $font-primary;
+	color: $color-primary;
+	padding: 0;
+	margin: 0;
+}
+.contact__text {
+	font-size: rem(14);
+	font-family: $font-secondary;
+	color: $color-text;
+	margin: rem(2) 0 rem(10) 0;
+}
+@media (min-width: 770px) {
+	.contact-wrapper {
+		display: flex;
+	}
+}
